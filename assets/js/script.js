@@ -71,3 +71,22 @@ function successAlert() {
     icon: "success",
   });
 }
+
+$("#downloadCv").click(function (e) {
+  e.preventDefault();
+  const fileUrl = "./assets/cv.pdf";
+
+  const fileName = "CV-Muhammad-Ega-Dermawan.pdf";
+
+  const link = document.createElement("a");
+  link.href = fileUrl;
+  link.download = fileName;
+
+  link.click();
+  Swal.fire({
+    title: "Success!",
+    text: "CV telah diunduh!",
+    icon: "success",
+    confirmButtonText: "OK",
+  });
+});
